@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        bat './mvnw package &&  java -jar target/*.jar'
+        powershell(script: 'mvn package', encoding: 'utf-8', returnStatus: true, returnStdout: true)
       }
     }
 
